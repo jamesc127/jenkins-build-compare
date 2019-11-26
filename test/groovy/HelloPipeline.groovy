@@ -4,7 +4,7 @@ import com.lesfurets.jenkins.unit.global.lib.Library
 
 @Library('nextlayerci-example@master') _
 
-import io.nextlayer.ci.UtilExample
+import com.datastax.jenkins.DseBuildCompare
 
 def execute() {
     node() {
@@ -13,7 +13,7 @@ def execute() {
             sayHello "Traveller"
         }
         stage("Middle") {
-            UtilExample util = new UtilExample()
+            DseBuildCompare util = new DseBuildCompare()
             echo util.doSomething()
         }
         stage("Last") {
